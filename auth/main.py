@@ -2,14 +2,14 @@ import uvicorn
 
 from fastapi import FastAPI
 
-from auth.views.register import register_router
+from auth.views.auth_view import auth_router
 
 
 class Main:
     def __init__(self):
         self.app = FastAPI()
 
-        self.app.add_route(path="/register", route=register_router)
+        self.app.add_route(path="/register", route=auth_router)
 
     def run(self):
         pass
